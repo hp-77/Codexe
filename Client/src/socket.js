@@ -7,4 +7,6 @@ const options = {
   transports: ["websocket"],
 };
 
-export const socket = io("http://localhost:5000", options);
+//export const socket = io("http://localhost:5000", options);
+
+export const socket = io(process.env.REACT_APP_BACKEND_URL); // NEW
