@@ -13,13 +13,13 @@ const Space = require("./models/spaceSchema");
 connectDB();
 
 const port = process.env.PORT || 5000;
-const front_url = "http://localhost:3000"; 
+const front_url = process.env.FRONTEND_URL; 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(
     {
-        origin: front_url,
+        origin: "*",
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true
     }
@@ -32,7 +32,7 @@ app.use(errorHandler);
 const server = http.createServer(app);
 const io = socketio(server, {
     cors: {
-        origin: front_url,
+        origin: "*",
     },
 });
 // const Date = moment().format();
