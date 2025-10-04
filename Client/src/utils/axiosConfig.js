@@ -4,7 +4,7 @@ import axios from "axios";
 const instance = axios.create({
   // where we make our configurations
   //baseURL: "http://localhost:5000",
-   baseURL: `${process.env.REACT_APP_BACKEND_URL}/api`,
+   baseURL: `${process.env.REACT_APP_BACKEND_URL}`,
 });
 
 // Where you would set stuff like your 'Authorization' header, etc ...
